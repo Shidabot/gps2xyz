@@ -1,0 +1,15 @@
+<launch>
+  <param name="gps_sub_topic" value = "/gps" />
+  <param name="output_frame_name" value = "map" />
+  <param name="auto_get_origin_gps" value = "true" />
+  <param name="z_rotate_value" value = "0.0" />
+  <param name="origin_latitude_value" value = "1.0" />
+  <param name="origin_longitude_value" value = "1.0" />
+  <param name="origin_altitude_value" value = "1.0" />
+  <param name="latitude_resolution" value = "9.01006167e-06" />
+  <param name="longitude_resolution" value = "1.09244689e-05" />
+  <param name="altitude_resolution" value = "1.0" />
+
+  <node pkg="gps_to_xyz" name="gps_to_xyz" type="gps_to_xyz" output="screen" />
+  <node pkg="rviz" type="rviz" name="rviz" args="-d $(find gps_to_xyz)/rviz/gps_to_xyz.rviz" />
+</launch>
