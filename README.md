@@ -4,7 +4,8 @@
  This package is used to convert GNSS data in rosbag to xyz and display trajectory on rviz. It is able to plot marker points of incoming gps positions. 
  
  Type: sensor_msgs/NavSatFix.
- 
+
+ Test on Ubuntu 18.04 + Ros melodic
 ## Building
 
 ```
