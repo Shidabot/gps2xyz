@@ -95,9 +95,7 @@ Before applying `yaw_offset_deg`, the output axes are:
 - `y`: North
 - `z`: Up
 
-The output is a local tangent-plane representation. It is intended for local and
-regional trajectories, visualization, and comparison鈥攏ot global navigation across
-very large distances.
+The output is a local tangent-plane representation. 
 
 ## License
 
