@@ -1,0 +1,34 @@
+<launch>
+  <arg name="gps_topic" default="/gps"/>
+  <arg name="path_topic" default="/gpsTrack"/>
+  <arg name="output_frame" default="map"/>
+  <arg name="auto_origin" default="true"/>
+  <arg name="origin_latitude" default="0.0"/>
+  <arg name="origin_longitude" default="0.0"/>
+  <arg name="origin_altitude" default="0.0"/>
+  <arg name="yaw_offset_deg" default="0.0"/>
+  <arg name="use_altitude" default="true"/>
+  <arg name="min_distance_m" default="0.2"/>
+  <arg name="max_position_variance" default="0.0"/>
+  <arg name="max_path_points" default="10000"/>
+  <arg name="open_rviz" default="true"/>
+
+  <node pkg="gps_to_xyz" type="gps_to_xyz_node" name="gps_to_xyz" output="screen">
+    <param name="gps_topic" value="$(arg gps_topic)"/>
+    <param name="path_topic" value="$(arg path_topic)"/>
+    <param name="output_frame" value="$(arg output_frame)"/>
+    <param name="auto_origin" value="$(arg auto_origin)"/>
+    <param name="origin_latitude" value="$(arg origin_latitude)"/>
+    <param name="origin_longitude" value="$(arg origin_longitude)"/>
+    <param name="origin_altitude" value="$(arg origin_altitude)"/>
+    <param name="yaw_offset_deg" value="$(arg yaw_offset_deg)"/>
+    <param name="use_altitude" value="$(arg use_altitude)"/>
+    <param name="min_distance_m" value="$(arg min_distance_m)"/>
+    <param name="max_position_variance" value="$(arg max_position_variance)"/>
+    <param name="max_path_points" value="$(arg max_path_points)"/>
+  </node>
+
+  <node if="$(arg open_rviz)" pkg="rviz" type="rviz" name="rviz"
+        args="-d $(find gps_to_xyz)/rviz/gps_to_xyz.rviz"/>
+</launch>
+

@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>gps_to_xyz</name>
+  <version>1.0.0</version>
+  <description>Convert WGS84 GNSS fixes to a local ENU trajectory for ROS.</description>
+
+  <maintainer email="shidabot@users.noreply.github.com">Shidabot</maintainer>
+  <license>BSD-3-Clause</license>
+
+  <url type="repository">https://github.com/Shidabot/gps2xyz</url>
+  <url type="bugtracker">https://github.com/Shidabot/gps2xyz/issues</url>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <depend>geometry_msgs</depend>
+  <depend>nav_msgs</depend>
+  <depend>roscpp</depend>
+  <depend>sensor_msgs</depend>
+
+  <exec_depend>rviz</exec_depend>
+
+  <export/>
+</package>
+
